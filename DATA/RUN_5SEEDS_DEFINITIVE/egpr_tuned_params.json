@@ -1,0 +1,266 @@
+{
+  "Split-MNIST|EGPR (tuned)": [
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    }
+  ],
+  "Split-MNIST|EGPR+Replay (tuned)": [
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.0
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    }
+  ],
+  "Permuted-MNIST|EGPR (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    }
+  ],
+  "Permuted-MNIST|EGPR+Replay (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    }
+  ],
+  "Rotated-MNIST|EGPR (tuned)": [
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    }
+  ],
+  "Rotated-MNIST|EGPR+Replay (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.0
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.5
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    }
+  ],
+  "Split-FashionMNIST|EGPR (tuned)": [
+    {
+      "adapt_sens": 0.2,
+      "sig_center": 3.0
+    },
+    {
+      "adapt_sens": 0.2,
+      "sig_center": 3.0
+    },
+    {
+      "adapt_sens": 0.15,
+      "sig_center": 2.5
+    },
+    {
+      "adapt_sens": 0.2,
+      "sig_center": 3.0
+    },
+    {
+      "adapt_sens": 0.3,
+      "sig_center": 1.0
+    }
+  ],
+  "Split-FashionMNIST|EGPR+Replay (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.0
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    }
+  ],
+  "Split-CIFAR10|EGPR (tuned)": [
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.2,
+      "sig_center": 3.0
+    },
+    {
+      "adapt_sens": 0.3,
+      "sig_center": 1.0
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.5
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.0
+    }
+  ],
+  "Split-CIFAR10|EGPR+Replay (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    }
+  ],
+  "Split-CIFAR100|EGPR (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.1,
+      "sig_center": 2.0
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    }
+  ],
+  "Split-CIFAR100|EGPR+Replay (tuned)": [
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.0
+    },
+    {
+      "adapt_sens": 0.01,
+      "sig_center": 0.5
+    },
+    {
+      "adapt_sens": 0.05,
+      "sig_center": 1.0
+    }
+  ]
+}
