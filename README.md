@@ -1,5 +1,7 @@
 # Entropy-Gated Plasticity Regulation (EGPR)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22098875.svg)](https://doi.org/10.5281/zenodo.22098875)
+
 Official open-source implementation and benchmark suite for **Entropy-Gated Plasticity Regulation (EGPR)**.
 
 * **Part 1 of the Memory-Free Continual Learning Series:**

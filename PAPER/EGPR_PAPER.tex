@@ -125,11 +125,11 @@ This results in early layers receiving near-full plasticity while deeper layers 
 \eta_{\text{eff}}^{(l)} = \eta_{\text{base}} \times G_{\text{total}} \times M_l
 \end{equation}
 
-\subsection{Exploration Floor ($\varepsilon$)}
+\subsection{Exploration Floor (\texorpdfstring{$\varepsilon$}{epsilon})}
 
 In domains where the entropy z-score remains persistently high (e.g., due to large semantic distance between tasks), the sigmoid gate drives plasticity to near zero. Without a minimum floor, the system enters a deadlock: no learning occurs, so no entropy reduction can be detected, and no boost is triggered. A fixed exploration floor of $\varepsilon = 0.02$ was found to resolve this deadlock in all tested benchmarks, providing a minimal learning rate ($\eta_{\text{eff}} = 0.02 \times \eta_{\text{base}}$) that allows the temporal derivative signal to emerge.
 
-\subsection{Empirical Signal of Optimization Convergence (Entropic Reduction Phase)}
+\subsection{Empirical Signal of Optimization Convergence}
 
 The temporal derivative boost ($dH/dt < -s$) is designed to identify when the optimization trajectory transitions from initial exploration to structural alignment with a new task distribution. Empirically, when encountering an out-of-distribution task, output entropy initially spikes ($z \gg 0$). As the network begins to assimilate the new underlying patterns, output entropy drops precipitously.
 
@@ -142,19 +142,19 @@ In internal telemetry, when the per-batch entropy falls below an empirical thres
 
 Six continual learning scenarios were evaluated:
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{Benchmark configurations.}
-\begin{tabular}{lllll}
+\begin{tabular}{lllc l}
 \toprule
-Benchmark & Type & Architecture & Tasks & Training samples \\
+Benchmark & Type & Architecture & Tasks & Samples \\
 \midrule
-Split-MNIST & Class-incremental & MLP (256 hidden) & 2 & 5,000/task \\
-Permuted-MNIST & Domain-incremental & MLP (256 hidden) & 2 & 5,000/task \\
-Rotated-MNIST & Gradual shift & MLP (256 hidden) & 5 & 2,000/task \\
-Split-FashionMNIST & Class-incremental & MLP (256 hidden) & 2 & 5,000/task \\
-Split-CIFAR10 & Class-incremental & ConvNet (32-64, 256 fc) & 2 & 2,500/task \\
-Split-CIFAR100 & Class-incremental & ConvNet (32-64, 256 fc) & 2 & 2,000/task \\
+Split-MNIST & Class-incr. & MLP (256h) & 2 & 5k/task \\
+Permuted-MNIST & Domain-incr. & MLP (256h) & 2 & 5k/task \\
+Rotated-MNIST & Gradual shift & MLP (256h) & 5 & 2k/task \\
+Split-Fashion & Class-incr. & MLP (256h) & 2 & 5k/task \\
+Split-CIFAR10 & Class-incr. & CNN (32-64, 256fc) & 2 & 2.5k/task \\
+Split-CIFAR100 & Class-incr. & CNN (32-64, 256fc) & 2 & 2k/task \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -172,7 +172,7 @@ Split-CIFAR100 & Class-incremental & ConvNet (32-64, 256 fc) & 2 & 2,000/task \\
 
 \begin{itemize}
     \item \textbf{EGPR}: Full system (sigmoid gate + $dH/dt$ boost + DMP + $\varepsilon$-floor), with default hyperparameters ($c = 2.0$, $s = 0.1$).
-    \item \textbf{EGPR (tuned)}: EGPR with hyperparameters selected via grid search over $c \in \{0.5, 1.0, 1.5, 2.0, 2.5, 3.0\}$ and $s \in \{0.01, 0.05, 0.1, 0.15, 0.2, 0.3\}$, optimizing for the harmonic mean of retention and acquisition.
+    \item \textbf{EGPR (tuned)}: EGPR with hyperparameters selected via grid search over $c \in \{0.5, 1.0, 1.5,$ $2.0, 2.5, 3.0\}$ and $s \in \{0.01, 0.05, 0.1,$ $0.15, 0.2, 0.3\}$, optimizing for the harmonic mean of retention and acquisition.
     \item \textbf{EGPR (no $dH/dt$)}: Ablation removing the temporal derivative boost.
     \item \textbf{EGPR (no DMP)}: Ablation removing depth-modulated plasticity.
     \item \textbf{EGPR+Replay}: EGPR combined with experience replay (buffer size = 200).
@@ -198,7 +198,7 @@ All results are means and standard deviations over $N = 5$ random seeds. Statist
 
 Table~\ref{tab:retention} presents retention results across all benchmarks.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{Mean retention ($\pm$ std) over 5 seeds. Bold indicates best memory-free method per benchmark.}
 \label{tab:retention}
@@ -222,7 +222,7 @@ Among the memory-free methods evaluated (SGD, EWC, EGPR), EGPR achieves the high
 
 While EGPR demonstrates strong retention, its acquisition on new tasks is lower than baseline methods. Table~\ref{tab:tradeoff} presents the retention--acquisition tradeoff.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{Retention vs.\ acquisition for selected methods.}
 \label{tab:tradeoff}
@@ -253,7 +253,7 @@ EGPR's conservative gating strategy prioritizes retention at the expense of acqu
 
 EGPR and experience replay address complementary aspects of continual learning: EGPR suppresses destructive weight updates, while replay reinforces prior task representations. Table~\ref{tab:synergy} documents the effect of combining both mechanisms.
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{Retention improvement from adding EGPR to standard replay.}
 \label{tab:synergy}
@@ -277,7 +277,7 @@ The combination achieves consistent and statistically significant retention impr
 
 To assess the contribution of each component, two ablated variants were evaluated: EGPR without the temporal derivative boost (no $dH/dt$) and EGPR without depth-modulated plasticity (no DMP).
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{Ablation results (mean over 5 seeds).}
 \label{tab:ablation}
@@ -384,7 +384,7 @@ This work has presented Entropy-Gated Plasticity Regulation (EGPR), a mechanism 
 
 All experiments were conducted on consumer-grade hardware (AMD Ryzen 7, CPU only). The complete benchmark script, raw CSV results, and tuned hyperparameters are available in the accompanying repository. Each reported result represents the mean and standard deviation over 5 random seeds (42, 100, 2026, 7, 314).
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{EGPR hyperparameters.}
 \begin{tabular}{lcc}
@@ -400,7 +400,7 @@ EMA decay (short/medium/long) & 2/5, 2/11, 2/21 & --- \\
 \end{tabular}
 \end{table}
 
-\begin{table}[h]
+\begin{table}[htbp]
 \centering
 \caption{Baseline hyperparameters.}
 \begin{tabular}{lc}
