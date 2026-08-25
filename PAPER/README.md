@@ -32,8 +32,10 @@ If you use this work in your research, please cite it as:
 ```bibtex
 @misc{lemos2026egpr,
   title={Entropy-Gated Plasticity Regulation for Continual Learning Without Episodic Memory},
-  author={Lemos, J.},
+  author={Lemos, Jero},
   year={2026},
-  howpublished={Preprint}
+  publisher={Zenodo},
+  doi={10.5281/zenodo.22098875},
+  url={https://doi.org/10.5281/zenodo.22098875}
 }
 ```
